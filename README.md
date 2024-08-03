@@ -111,4 +111,7 @@ there is no content to project
 
 . 8 ngOnDestroy
 >for example if we place an **ngIf** on a component, and this **ngIf** then set to false, at that time, **ngIf** will remove that component from the **DOM**. At that time, **ngOnDestroy** will raise
->this hook is a suitable place to do clean up's such as unsubscribe **observable's** detach **event handler's** to avoid memory leakes and this hook is the last life cycle hook of a component or directive.
+>this hook is a suitable place to do clean up's such as unsubscribe **observable's** detach **event handler's** to avoid memory leakes and this hook is the last life cycle hook of a component or directive.  
+
+ 
+![hooks-in-sequence](https://github.com/user-attachments/assets/eb93e36c-f491-437b-b502-37c5371de46a)
