@@ -46,8 +46,12 @@ Angular run a change detection cycle on every event that may result in a change 
 >are constructed or available.  
 
 ## :dart: life cycle hooks
-> [!Note]  
+
+
+> [!NOTE]  
 > Following life cycles are sorted by execution order  
+
+
 . 1 ngOnchanges  
 >Once angular instantiates the class it kick-start the first change detection cycle of the component. And the first one is **ngOnchanges**  
 >
@@ -64,8 +68,12 @@ Angular run a change detection cycle on every event that may result in a change 
 >```
 > In above sample initializing the input properties is the first task that angular carries during the change detection cycle. And if it
 > detects any changes in input properties , then it raise the **ngOnChanges** hook. It does so during every change detection cycle.
-> [!Important]  
-> this hook will not raise if the change detector doesn't found any input boundaries change.  
+
+
+> [!IMPORTANT]
+> this hook will not raise if the change detector doesn't found any input boundaries change.
+
+
 >So this hook will raise every time a component instantiate and also when ever data input get changes.  
 
 . 2 ngOnInit  
@@ -75,9 +83,12 @@ Angular run a change detection cycle on every event that may result in a change 
 >This is a perfect place for adding any initialization logic for the component  
 >Here we have access to all components input property. (this hook is suitable for any http request for back-end comunication and reaching 
 data)
-> [!Inportant]  
+
+
+> [!IMPORTANT]  
 > None of the component child or projected contents are available at this hook. Hence any property decorates with **@ViewChilds**, 
 **ViewChildren**, **ContentChild**, **ContentChildren** will not be available to use.  
+
 
 . 3 ngDoCheck  
 >The angular inject this hook during every change detection cycle. This hook will raise even no change detected in any of the properties.  
@@ -96,8 +107,10 @@ there is no content to project
 >Angular also updates the properties decorated with the **@ContentChild** and **@ContentChildren** before raising this hook. Angular calls this hook even if there is no projected content in the component.  
 >Both  **ngAfterContentChecked** and **ngAfteContentInit** invokes after the external content is initialized checked and updated and both are very similar And by external content we mean projected content. Now only diffrerence between these two hooks is **ngAfterContentChecked** is raised after every change detection cycle while  **ngAfterContentInit** is raised during the first change detection cycle.  
 >So **ngAfterConentInit** hook only raise once and it's after the content is initialized completely after that for every changes appear in the content angular will raise **ngAfterContentChecked**
-> [!Tip]  
+
+> [!TIP]
 > These two hooks **ngAfterContentChecked** and **ngAfterConentInit** are component only hook and aren't applicable on directives
+
 
 . 6 ngAfterViewInit 
 >This hook will is called after the component's View and all it's child views are fully initialized. Angular also updates the properties decorated with the **@ViewChild** and **@ViewChildren** decorators before raising this hook.
