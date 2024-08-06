@@ -15,7 +15,7 @@
 <div>Hello {{name}}</div>
  ```
 
-According to the example, the dom will updated every time the property "**name**" changes.
+According to the example, the dom will update every time the property "**name**" changes.
 
 Angular run a change detection cycle on every event that may result in a change in dom. During the change detection cycle angular checks every bound property in the template with the component class and if it detects any change it will update dom and during these process angular raises the life cycle hooks during the important stages of change detection mechanism.
 
